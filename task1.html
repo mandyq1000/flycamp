@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+      <v-app id="inspire">
+        <v-navigation-drawer
+          v-model="drawer"
+          app
+        >
+          <v-list>
+            <v-list-item href="C:\Users\ManishP\Desktop\VueTask\task1.html">
+              <v-list-item-action>
+                <v-icon>mdi-home</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>Home</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item href="C:\Users\ManishP\Desktop\VueTask\page2.html">
+              <v-list-item-action>
+                <v-icon>mdi-car</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>Page 2</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+        </v-navigation-drawer>
+    
+        <v-app-bar
+          app
+          color="indigo"
+          dark
+        >
+          <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-toolbar-title>Application</v-toolbar-title>
+        </v-app-bar>
+        
+        <v-main>
+          <v-container class="fill-height blue lighten-5" fluid>           
+              <v-row wrap>
+                <v-col cols="12" md="8" sm="12" lg="6">
+                  <iframe width=100% height=100%
+                  src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                  </iframe>
+                </v-col>
+                <v-col cols="12" sm="12" lg="6" md="4" >
+                  <v-img src="https://picsum.photos/510/300?random" aspect-ratio="1.7" contain></v-img>
+                  <v-row>
+                    <v-col>
+                      <v-card outlined>
+                      <v-card-text cols="12" md="6" sm="12">
+                      Inspired by one off the all time greats, QUEEN, the Muppets present their rendition of the classic, "Bohemian Rhapsody." Originally released in 1975, this classic with a Muppets Twist is sure to keep every music lover, and Muppet fan satisfied. 
+                  </v-card></v-row>
+                  <v-col xs12 md8 lg6>
+                  <v-row><v-btn center large class="primary">Primary</v-btn></v-row>
+                  <v-row><v-switch class="mx-2" label="Toggle Button"></v-switch></v-row>
+                  <v-row><v-col cols="12">
+                    <v-slider
+                      min="0"
+                      max="100"
+                      label="slider"
+                    ></v-slider></v-row>
+
+                </v-col>
+                </v-col>
+               
+              </v-row>
+           
+          </v-container>
+        </v-main>
+        
+        <!-- <v-main>
+          <v-container
+            class="fill-height"
+            fluid
+          >
+            <v-row
+              align ="center"
+              justify="center"
+            >
+               <v-col class="text-center">
+                <v-tooltip left>
+                  <template v-slot:activator="{ on }">
+                    <v-btn
+                      :href="source"
+                      icon
+                      large
+                      target="_blank"
+                      v-on="on"
+                    >
+                      <v-icon large>mdi-code-tags</v-icon>
+                    </v-btn>
+                  </template>
+                  <span>Source</span>
+                </v-tooltip>
+              </v-col>
+            </v-row> 
+          </v-container>
+        </v-main> -->
+        <v-footer
+          color="indigo"
+          app
+        >
+          <span class="white--text">&copy; {{ new Date().getFullYear() }}</span>
+        </v-footer>
+      </v-app>
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+   new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  props: {
+    source: String,
+  },
+
+  data: () => ({
+    drawer: false,
+  }),
+})
+  </script>
+</body>
+</html>
